@@ -1,13 +1,17 @@
 <div class="tree">
+  <h1> Angular Tree Example </h1>
+
   <mat-form-field appearance="outline">
     <mat-label>Search</mat-label>
     <input matInput type="text" [formControl]="search" />
   </mat-form-field>
-  <button mat-button (click)="stackSearch()">Search</button>
+  <button mat-stroked-button (click)="stackSearch()">Search</button>
+  <button mat-button color="warn" (click)="reset()">Reset</button>
   <mat-tree
     [dataSource]="dataSource"
     [treeControl]="treeControl"
     class="example-tree"
+    #tree
   >
     <!-- This is the tree node template for leaf nodes -->
     <!-- There is inline padding applied to this node using styles.
